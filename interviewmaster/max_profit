@@ -1,0 +1,12 @@
+
+def max_profit(prices: list[int]) -> int:
+    min_price: int = prices[0]
+    max_profit: int = 0
+
+    for price in prices:
+        min_price = min(min_price, price)
+        profit: int = price - min_price
+        max_profit = max(max_profit, profit)
+
+
+    return max_profit
