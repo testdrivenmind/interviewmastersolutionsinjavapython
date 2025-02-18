@@ -1,0 +1,40 @@
+
+from typing import Optional, Tuple
+
+class TreeNode:
+    def __init__(self, val: int=0, left: Optional["TreeNode"]=None, right: Optional["TreeNode"]=None ) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
+
+""" 
+def height_and_diameter(root: Optional["TreeNode"]) -> Tuple[int, int]:
+    if not root:
+        return 0,0
+    left_height, left_diameter = height_and_diameter(root.left)
+    right_height, right_diameter = height_and_diameter(root.right)
+    height: int = 1 + max(left_height, right_height)
+    diameter: int = max(left_diameter, right_diameter, left_height + right_height)
+    return height, diameter
+
+
+def diameter_of_binary_tree(root: Optional[TreeNode])->int:
+    _, diameter = height_and_diameter(root)
+    return diameter """
+
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional["TreeNode"]=None) -> int:
+        self.max_diameter: int = 0
+
+        def dfs(node):
+            if not node:
+                return 0
+            left_height: int = dfs(node.left)
+            right_height: int = dfs(node.right)
+
+            self.max_diameter = max(self.max_diameter, left_height + right_height)
+            
+            return 1 + max(left_height, right_height)
+
+        dfs(root)
+        return self.max_diameter
