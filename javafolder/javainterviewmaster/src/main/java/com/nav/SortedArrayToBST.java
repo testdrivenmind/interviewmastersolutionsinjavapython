@@ -45,7 +45,17 @@ public class SortedArrayToBST {
             
             }
         
-        
+    public TreeNode sortedArrayToBSD2(int[] nums) {
+        if (nums.length == 0) {
+            return null;
+            
+        } else {
+            int mid = nums.length / 2;
+            return new TreeNode(nums[mid], sortedArrayToBSD2(Arrays.copyOfRange(nums, 0, mid)), sortedArrayToBSD2(Arrays.copyOfRange(nums, mid + 1, nums.length)));
+        }
+       
+
+    }
         
 // Tree Travesal, solve the problem not via recurrsion, write this solution in python, see the runtime in java
 // have a look into the tree problems one more time
