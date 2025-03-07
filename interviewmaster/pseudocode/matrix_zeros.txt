@@ -1,0 +1,14 @@
+function matrix_zero(matrix):
+    rows_to_mark_zero = set()
+    cols_to_mark_zero = set()
+    
+    for row, col in enumerate(matrix):
+        if 0 in row:
+            rows_to_mark_zero.append(row)
+            cols_to_mark_zero.append(col)
+
+    for row, col in enumerate(matrix):
+        if row in rows_to_mark_zero:
+            matrix[row] = [0]
+        for col in cols_to_mark_zero:
+            matrix[row][col] = [0]     

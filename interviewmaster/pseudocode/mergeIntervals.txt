@@ -1,0 +1,25 @@
+function mergeIntervals(intevals)
+    if intervals is empty
+        return None
+
+    sort intervals by start value of each interval
+    result = [intervals[0]] i.e. starting with the first element in the intervals
+
+    for interval in intervals:
+        last_merged = last element in result
+        current = interval
+
+        if current.start <= last_merged.end: # overlap condition
+            last_merged.end = max(last_merged.end, current.end) # we are merging the interval
+        else
+            result append current as there is no overlap
+    return result
+
+The big o or time complexity of this is
+
+- since we are sorting, generally, most sorting algorithms are considered o(n log n)
+- when combining the intervals we are going over the entire list, hence it is o(n)
+- since o(n log n) dominates o(n), the time complexity is o(n log n)  i.e o(n) + o(n log n) = o
+
+Space complexity is 
+- o(n) because we are coping all the elements in intervals to the merged list
