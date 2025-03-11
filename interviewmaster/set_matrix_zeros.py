@@ -1,7 +1,21 @@
+from copy import deepcopy
 from typing import List
 
 
 class Solution:
+
+    def set_zeros_mn(self, matrix: List[List[int]]) -> None:
+        result_matrix = [ [val for val in row] for row in matrix]
+
+        for row_index, row_list in enumerate(matrix):
+            for col_index, val in enumerate(row_list):
+                if val == 0:
+                    result_matrix[row_index] = [0] * len(matrix[row_index])
+                for i in range(len(matrix)):
+                    result_matrix[i][col_index] = 0
+
+        for row_index in range(len(matrix)):
+            matrix[row_index] = result_matrix[row_index]
 
     def set_zeros(self, matrix: List[List[int]]) -> None:
         rows_to_mark_zero = set()

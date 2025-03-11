@@ -1,0 +1,12 @@
+function spiralOrder(matrix):
+
+    
+    Going with a recusive approach
+
+    Ignored one column and one row matrix as base cases will cover it in recurrsion
+
+    square = columns and rows are equal - base case for it
+
+    rectangle = columns or row are unequal - base case for it
+
+    reducing the problem by one

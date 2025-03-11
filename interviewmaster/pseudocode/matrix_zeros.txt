@@ -15,3 +15,15 @@ function matrix_zero(matrix):
     for col_index in cols_to_mark_zero:
         for row_index in range(len(matrix)):
             matrix[row_index][col_index] = 0
+
+The time complexity
+- We are iterating over all the elements in the row which is O(n)
+- We are iterating over all the columns in the row which is O(m)
+- Second pass again for identfied elements row and column sepately which is O(n) + O(m)
+- So, O(m * n) + O(m) +O(n) = O(m*n)
+
+Is the above understanding correct. But why is it not O(n2), because we are revisting. This subtle difference, 
+im not able to understand. Can you please explain with a very small example
+
+
+[[10,20]. [11,12]]
