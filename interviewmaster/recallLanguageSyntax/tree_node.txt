@@ -1,0 +1,102 @@
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val: int=0, left: Optional['TreeNode']=None, right: Optional['TreeNode']=None) -> None:
+    self.val = val
+    self.left = left
+    self.right = right
+
+    def search(root: TreeNode, target: int) -> bool:
+        while root:
+            if target < root.val:
+                root = root.left
+            elif target > root.val:
+                root = root.right
+            else:
+                return True
+        return False
+
+
+    def insert(root: TreeNode, val: int) -> bool:
+
+        if not root:
+            return TreeNode(val)
+        
+        if val < root.val:
+            root.left = insert(root.left, val)
+        else:
+            root.right = inseert(root.right, val)
+
+        return root
+    
+
+    def minValue(root: TreeNode) -> int:
+        current = root
+        while current and current.left:
+            current = current.left
+        return current.val
+
+    def remove(root: TreeNode, val: int) -> TreeNode:
+
+        if not root:
+            return None
+        
+        if val > root.val:
+            root.right = remove(root.right, val)
+        elif val < root.val:
+            root.left = remove(root.left, val)
+        else:
+            if not root.left:
+                return root.right
+            elif not root.right:
+                return root.left
+            else:
+                minimum_value = minimum_value(root.right)
+                root.val = minimum_value
+                root.right = remove(root.right, minimum_value)
+        return root
+
+
+    // Travel to the left till we hit the full depth and back track till the root, then travel right
+    def inorderDFS(root: TreeNode) -> None:
+        if not root:
+            return None
+        inorderDFS(root.left)
+        print(root.val)
+        inorderDFS(root.right)
+
+
+    // First visit the parent, then visit the left subtree and then the right subtree    
+    def preorderDFS(root: TreeNode) -> None:
+        if not root:
+            return None
+        print(root.val)
+        preorderDFS(root.left)
+        preorderDFS(root.right)
+
+    // First visit the left subtree, then the right subtree and finally the parent node last
+    def postorderDFS(root: TreeNode) -> None:
+        if not root:
+            return None
+        postorderDFS(root.left)
+        postorderDFS(root.right)
+        print(root.val)
+
+    def bfs(root: TreeNode) -> None:
+        
+        if root:
+            q = deque(root)
+
+        level = 0
+        while q:
+            print(f"current_level is: {level}")
+            for _ in range(len(q)):
+                current = q.popleft()
+                print(current.val)
+                if current.left:
+                    q.add(current.left)
+                if root.right:
+                    q.add(current.right)
+            level = leve + 1
+        

@@ -1,0 +1,7 @@
+    time complexity :
+        We traverse through every node in the tree and pop and write to list
+        hence it is O(n)
+    space complexity:
+        We use current_level_result to store the list or reverse list which is O(n)
+        Im ignoring the result as it is generally not considered
+        so it is O(node)

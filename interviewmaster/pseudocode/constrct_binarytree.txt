@@ -1,0 +1,25 @@
+function(preorder, inorder) -> Optional['TreeNode']
+    root is the first element in the preorder list
+    Now i have to identify what element will go to the left of root
+
+    preorder[3, 9, None, None, 20, 15, 7]
+    inorder[9, 3, 20, 15, 7]
+
+Time-Complexity :
+    O(n) as it is a recursion a binary tree where we visit everyone ones
+Spac-Complexity:
+    o(h) where h is the hieght of the binary tree, so it should be o(log n)
+    we will be having half the number of variables to build the binary tree
+
+
+function buildTree(postorder, inorder) -> TreeNode:
+    if not in preorder or not in postorder:
+        return None
+    
+    root_val = len(postorder) - 1
+    root = TreeNode(root_val)
+    root_level_in_inorder = inorder[root]
+
+    root.left = buildTree(postorder[:len(postorder - 2): -1], inorder[:root_level_in_inorder])
+    root.right = buildTree(postorder[len(postorder - 2)::-1], inorder[root_level_in_inorder + 1:])
+    return root
