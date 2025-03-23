@@ -1,0 +1,16 @@
+we have list of hieghts in an array. We should calculate the max_area
+height = [1,8,6,2,5,4,8,3,7]
+I will start looking for the maxValue in the array and store it as max_value.
+If this max_value  > previous seen value:
+    We also need set this as max_value
+    There is a leak
+I still go about looking for next values, 
+    if less there is a leak
+    if i find something equal or greater, then in know the previous leaks can be fixed
+    Now, i should also know, if i can shift the maxValue to a new found value based on the max_area 
+    so far calculated
+But what is the max_area, while it is 7 * 7 which is 49
+    We need the max_height
+    And max_distance in x-axis at every set without leak
+    So that we decide whether to reset or not
+    First it is not possible to take the decision here, as the leak can be fixed last as well

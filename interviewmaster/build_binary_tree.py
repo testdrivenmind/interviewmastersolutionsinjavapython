@@ -36,15 +36,6 @@ class Solution:
 nums = [10,20,30,40,50]
 forward_index = [0,1,2,3,4]
 backward_index = [-5,-4,-3,-2,-1]
-# if we give -1 as increment value in prints in the reverse direction,
-# so if i put the first value as 4 and last value as 0, it prints all numbers except number at index of 0
-
-# Now, what happens, if increment by negative value i.e. -1 still, but give end_index as -4 which is the last number and dont give any start Index.
-# It prints the entire list except the first index i.e. -1. Now if i want the first also be printed, i give 0. Now, it changes the start and stop index.
-
-# print(nums[:len(nums)-1:])
-# print(nums[::-1])
-# print(nums[-5])
 
 print("********")
 print(nums[len(nums) - 1:len(nums) - 2:-1])

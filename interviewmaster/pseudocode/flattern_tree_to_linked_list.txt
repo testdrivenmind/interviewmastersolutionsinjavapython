@@ -1,0 +1,21 @@
+Solution 1:
+create a list
+Travel the TreeNode in preorder
+put the values in the list
+Create a TreeNode with the values in the list with only the TreeNode.right having values
+
+
+Solution 2:
+If we have to to do in place, without extra space, then we have to look at recursion
+    what is the base case to stop the recursion?
+        - when tree.left becomes null, add it to tree.right
+    
+    one -level smaller problem
+        - preorder traversal - not sure 
+
+The above is my thought process, are both correct. 
+
+Let us first go with solution 1. Then come to recursion which is solution2.
+Please help me refine my though process for solution 1 without giving the solution.
+
+
