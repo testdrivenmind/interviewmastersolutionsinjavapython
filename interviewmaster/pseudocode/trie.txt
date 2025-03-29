@@ -1,0 +1,11 @@
+we need a new datastructure called Trie form of tree
+    - store and retrieve strings
+    - it should O(1) - the meaning of efficient  or O(log 1)
+
+    - if i have a string, what are the necessary attributes to achieve the best possible result for insert, search, startsWith
+        - length of the string - i can go by binary search or some hash to identify the unique string
+        - the above or some logic based on some other attribute is needed to insert and search the string in O(log n)
+        - if so, the tree should have those attributes plus left and right
+        - length, the string itself, ??
+        - startsWith - how will it find quickly or match if i give some letters, there is no cap as well for the prefix
+        

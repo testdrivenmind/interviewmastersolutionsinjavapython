@@ -1,0 +1,11 @@
+- copy the original list
+- read each word in the list and sort them
+= after sorting - make the sorted word the key and the word a value in a list
+- if the second sored word is in the list append to the key
+- finally return the list of list values as result
+
+Time Complexity:
+    O(n*k*log k)
+    n is the length of the strs
+    k is maximum length of each string
+    k log k is the time taken to sort each string
