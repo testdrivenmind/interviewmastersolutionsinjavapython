@@ -1,0 +1,7 @@
+question - to return a longest palindrome from a string
+
+    - create a function isPalindrome which takes a string and returns a boolean 
+    - now in the input string, how do i find the longest string which is palindrome
+    - where should i start the string,if it is not, how do i restart
+    - assuming i start from left and right, now if it not palindrome, should i reduce left or right
+    - 
