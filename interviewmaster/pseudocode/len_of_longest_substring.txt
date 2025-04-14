@@ -1,0 +1,17 @@
+function len_longest_substring (s):
+    i = 0
+    j = i + 1
+
+    window_chars = ""
+    longest_substring_length = len(window_chars)
+    seen = ""
+    while (j < len(s)):
+        seen.append(s[i])
+        if s[j] not in seen:
+            seen.append(s[j])
+        else:
+            longest_substring_length = max(len(window_chars), len(seen))
+            window_chars = seen
+            seen[i+1:j]
+        j += 1
+    return longest_substring_length

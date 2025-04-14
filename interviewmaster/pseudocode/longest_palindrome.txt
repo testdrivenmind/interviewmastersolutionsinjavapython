@@ -5,3 +5,9 @@ question - to return a longest palindrome from a string
     - where should i start the string,if it is not, how do i restart
     - assuming i start from left and right, now if it not palindrome, should i reduce left or right
     - 
+
+
+Time Complexity - O(n^2)
+    - as we are checking for every character if it is palindrome, with every other character in the string
+Space Complexity - O(1)
+    - as we are just using one string called longest and two temporary strings, for odd and even

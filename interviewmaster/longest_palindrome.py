@@ -12,6 +12,8 @@ class Solution:
         
         longest = ""
 
+
+        
         for i in range(len(s)):
             odd_palindrome = self.expand_from_center(s, i, i)
             even_palindrome = self.expand_from_center(s, i, i+1)
@@ -25,3 +27,5 @@ class Solution:
 
 sl = Solution()
 print(sl.longest_palindrome("babad"))
+d = "abc"
+print(d[0:2])
